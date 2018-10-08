@@ -1,5 +1,20 @@
 // Select color input
+
 // Select size input
+// get width  from url
+function getWidth () {
+	var params = new URLSearchParams(document.location.search.substring(1));
+	var width = params.get("width");
+	return width;
+};
+
+//get height from url
+function getHeight () {
+	var params = new URLSearchParams(document.location.search.substring(1));
+	var height = params.get("height");
+	return height;
+}
+
 
 // When size is submitted by the user, call makeGrid()
 
@@ -8,9 +23,9 @@
 
 function makeGrid(wide, high) {
 	//for testing using 30 and 30 delete when I can get width height from submit
-	wide = 30;	//delete
-	high = 30;	//delete
-	color = "red";	//delete
+	var wide = getWidth();	//delete
+	var high = getHeight();	//delete
+	var color = "red";	//delete
 	var num = 0;
 	gridBox = document.querySelector("#pixelCanvas");
 	for (var row = 0; row < wide; row++) {
@@ -24,7 +39,6 @@ function makeGrid(wide, high) {
 		}
 	}
 	return gridBox;
-
 }
 
 //function to add color when click event
