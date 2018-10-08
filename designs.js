@@ -28,9 +28,9 @@ function makeGrid(wide, high) {
 	var color = "red";	//delete
 	var num = 0;
 	gridBox = document.querySelector("#pixelCanvas");
-	for (var row = 0; row < wide; row++) {
+	for (var row = 0; row < high; row++) {
 		var tr = gridBox.appendChild(document.createElement('tr'));
-		for (var clms = 0; clms < high; clms++) {
+		for (var clms = 0; clms < wide; clms++) {
 			var pixl = tr.appendChild(document.createElement('td'));
 //         			pixl.addEventListener('click', addColor(color)); 
 //				pixl.style.("background-color", "red");
