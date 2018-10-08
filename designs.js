@@ -27,16 +27,13 @@ function makeGrid(wide, high) {
 	var high = getHeight();	//delete
 	var color = "red";	//delete
 	var num = 0;
-	gridBox = document.querySelector("#pixelCanvas");
-	for (var row = 0; row < high; row++) {
-		var tr = gridBox.appendChild(document.createElement('tr'));
-		for (var clms = 0; clms < wide; clms++) {
-			var pixl = tr.appendChild(document.createElement('td'));
-//         			pixl.addEventListener('click', addColor(color)); 
-//				pixl.style.("background-color", "red");
-//				}));
-		
+	var gridBox = document.querySelector("#pixelCanvas");
+	for (let row = 0; row < high; row++) {
+		const tblRow = gridBox.appendChild(document.createElement('tr'));
+		for (let c = 0; c < wide; c++) {
+			const tblData = tblRow.appendChild(document.createElement('td'));
 		}
+
 	}
 	return gridBox;
 }
