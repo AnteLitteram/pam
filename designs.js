@@ -1,4 +1,5 @@
 // Select color input
+// get value from #colorPicker
 
 // Select size input
 // get width  from url
@@ -20,9 +21,8 @@ function getHeight () {
 
 
 
-
+//function to make the grid on #pixelCanvas
 function makeGrid(wide, high) {
-	//for testing using 30 and 30 delete when I can get width height from submit
 	var wide = getWidth();	//delete
 	var high = getHeight();	//delete
 	var color = "red";	//delete
