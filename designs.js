@@ -25,9 +25,7 @@ function getHeight () {
 function makeGrid(wide, high) {
 	var wide = getWidth();	//delete
 	var high = getHeight();	//delete
-	var color = "red";	//delete
-	var num = 0;
-	var gridBox = document.querySelector("#pixelCanvas");
+	const gridBox = document.querySelector("#pixelCanvas");
 	for (let row = 0; row < high; row++) {
 		const tblRow = gridBox.appendChild(document.createElement('tr'));
 		for (let c = 0; c < wide; c++) {
@@ -37,12 +35,4 @@ function makeGrid(wide, high) {
 	}
 	return gridBox;
 }
-
-//function to add color when click event
-//move to inline unnamed funciont
-//function addColor(color) {
-//	pixl.style.("background-color=" + color);
-//}	
-
-// call makeGrid for testing delete when using submit to call
 makeGrid();
