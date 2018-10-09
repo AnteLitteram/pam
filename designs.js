@@ -1,10 +1,12 @@
 // add var to hold id/color clicked/selected
 let clickId = "50";	//test with static 50 DELETE
-let color = "red";	//test with red DELETE
+//let color = "red";	//test with red DELETE
 
 // Select color input
 // get value from #colorPicker
-
+function getColor () {
+     let hue = document.getElementById("colorPicker").value;
+}
 
 
 
