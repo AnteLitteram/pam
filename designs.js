@@ -16,8 +16,16 @@ function getHeight () {
 	return height;
 }
 
+//need function to get id= from square that click occurs in
+//
+
+//need function to change background-color for <div> with id num clicked
+//
+
 
 // When size is submitted by the user, call makeGrid()
+//may need to add when DOM is ready code
+document.addEventListener('submit', makeGrid () );
 
 
 
@@ -38,4 +46,3 @@ function makeGrid(wide, high) {
 	}
 	return gridBox;
 }
-makeGrid();
