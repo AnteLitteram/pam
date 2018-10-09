@@ -25,11 +25,14 @@ function getHeight () {
 function makeGrid(wide, high) {
 	var wide = getWidth();	//delete
 	var high = getHeight();	//delete
+	var pixl = 0;
 	const gridBox = document.querySelector("#pixelCanvas");
 	for (let row = 0; row < high; row++) {
 		const tblRow = gridBox.appendChild(document.createElement('tr'));
 		for (let c = 0; c < wide; c++) {
 			const tblData = tblRow.appendChild(document.createElement('td'));
+			pixl = ++pixl;
+			tblData.innerHTML = "<div id='" + pixl + "'></div>";
 		}
 
 	}
