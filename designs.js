@@ -1,5 +1,12 @@
+// add var to hold id/color clicked/selected
+
+
+
 // Select color input
 // get value from #colorPicker
+
+
+
 
 // Select size input
 // get width  from url
@@ -20,7 +27,9 @@ function getHeight () {
 //
 
 //need function to change background-color for <div> with id num clicked
-//
+function addColor(id) {
+document.getElementById(id).style.backgroundColor = 'color';
+}
 
 
 // When size is submitted by the user, call makeGrid()
