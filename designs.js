@@ -1,5 +1,5 @@
 // add var to hold id/color clicked/selected
-let clickId = "50";	//test with static 50 DELETE
+//let clickId = "50";	//test with static 50 DELETE
 //let color = "red";	//test with red DELETE
 
 // Select color input
@@ -32,8 +32,11 @@ function getHeight () {
 
 
 //need function to change background-color for <div> with id num clicked
-
-
+function addColor() {
+	sqr = document.getElementById(50);
+//        sqr.style.backgroundColor = "red";
+        sqr.setAttribute("class", "useMe");
+}
 
 
 // When size is submitted by the user, call makeGrid()
@@ -56,9 +59,10 @@ function makeGrid(wide, high) {
 		for (let c = 0; c < wide; c++) {
 			const tblData = tblRow.appendChild(document.createElement('td'));
 			pixl = ++pixl;
-			tblData.innerHTML = "<div id='" + pixl + "'></div>";
+                        tblData.setAttribute("id", pixl);
 		}
 
 	}
 	return gridBox;
+
 }
