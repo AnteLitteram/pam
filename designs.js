@@ -1,5 +1,5 @@
 // add var to hold id/color clicked/selected
-//let clickId = "50";	//test with static 50 DELETE
+let clickOn = "";	//test with static 50 DELETE
 //let color = "red";	//test with red DELETE
 
 // Select color input
@@ -27,13 +27,16 @@ function getHeight () {
 }
 
 //need function to get id= from square that click occurs in
-//
+function getIdValue (event) {
+	clickOn = event.srcElement.getAttribute("id");
+	console.log(clickOn);
+}
 
 
 
 //need function to change background-color for <div> with id num clicked
-function addColor() {
-	sqr = document.getElementById(50);
+function addColor(clickOn) {
+	sqr = document.getElementById(clickOn);
 //        sqr.style.backgroundColor = "red";
         sqr.setAttribute("class", "useMe");
 }
@@ -44,6 +47,7 @@ function addColor() {
 document.addEventListener('submit', makeGrid () );
 document.addEventListener('click', function (event) {
 	console.log(event);
+	getIdValue(event);
 });
 
 

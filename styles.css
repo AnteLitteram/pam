@@ -39,6 +39,8 @@ input[type=number] {
     width: 6em;
 }
 
+/* need var hue to replace green */
 .useMe {
     	background-color: green;
 }
+
