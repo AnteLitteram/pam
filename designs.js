@@ -48,6 +48,7 @@ document.addEventListener('submit', makeGrid () );
 document.addEventListener('click', function (event) {
 	console.log(event);
 	getIdValue(event);
+	addColor(clickOn);  //may need if statement to check id=number in getIdValue function
 });
 
 
