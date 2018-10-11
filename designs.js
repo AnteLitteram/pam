@@ -1,6 +1,7 @@
 // add var to hold id/color clicked/selected
-let clickOn = "";	//test with static 50 DELETE
-//let color = "red";	//test with red DELETE
+let clickOn = "";
+//let hue = "";
+//let hue = document.getElementById("colorPicker").value;
 
 // Select color input
 // get value from #colorPicker
@@ -37,20 +38,15 @@ function getIdValue (event) {
 //need function to change background-color for <div> with id num clicked
 function addColor(clickOn) {
 	sqr = document.getElementById(clickOn);
-//        sqr.style.backgroundColor = "red";
-        sqr.setAttribute("class", "useMe");
+//       need if statement to confirm id is num so drag not color whole grid 
+        sqr.style.backgroundColor = document.getElementById("colorPicker").value;
 }
 
 
 // When size is submitted by the user, call makeGrid()
 //may need to add when DOM is ready code
-document.addEventListener('submit', makeGrid () );
-document.addEventListener('click', function (event) {
-	console.log(event);
-	getIdValue(event);
-	addColor(clickOn);  //may need if statement to check id=number in getIdValue function
-});
-
+document.addEventListener('submit', makeGrid ());  //add getColor function
+document.addEventListener('submit', getColor ());  //add getColor function
 
 
 //function to make the grid on #pixelCanvas
@@ -68,6 +64,12 @@ function makeGrid(wide, high) {
 		}
 
 	}
+	gridBox.addEventListener('click', function (event) {
+	console.log(event);
+	getIdValue(event);
+	addColor(clickOn);  //may need if statement to check id=number in getIdValue function
+        });
+
 	return gridBox;
 
 }
