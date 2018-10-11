@@ -50,7 +50,6 @@ function makeGrid(wide, high) {
 			pixl = ++pixl;
                         tblData.setAttribute("id", pixl); //number the td id for reference
 		}
-
 	}
 	gridBox.addEventListener('click', function (event) {
 	getIdValue(event);
