@@ -1,19 +1,13 @@
 let clickOn = "";
 // Select size input
 // get width  from url
-function getWidth () {
+function getSize () {
 	const params = new URLSearchParams(document.location.search.substring(1));
 	const width = params.get("width");
-
-	return width;
-};
-
-//get height from url
-function getHeight () {
-	const params = new URLSearchParams(document.location.search.substring(1));
 	const height = params.get("height");
-	return height;
-}
+
+	return [width, height];
+};
 
 
 // Select color input
@@ -35,16 +29,17 @@ document.addEventListener('submit', makeGrid ());
 
 //function to make the grid on #pixelCanvas
 function makeGrid() {
-	const wide = getWidth();
-	const high = getHeight();
+	const size  = getSize();	//call getSize and select from returned array width and height
+	const wide = size[0];
+	const high = size[1];
 	let pixl = 0;
 	const gridBox = document.querySelector("#pixelCanvas");
 	for (let row = 0; row < high; row++) {
 		const tblRow = gridBox.appendChild(document.createElement('tr'));
-		for (let c = 0; c < wide; c++) {
+		for (let col = 0; col < wide; col++) {
 			const tblData = tblRow.appendChild(document.createElement('td'));
-			pixl = ++pixl;
-                        tblData.setAttribute("id", pixl); //number the td id for reference
+			pixl = ++pixl;			  //pixel designation for each square
+                        tblData.setAttribute("id", pixl); //number the <td> id for reference
 		}
 	}
 	gridBox.addEventListener('click', function (event) {
