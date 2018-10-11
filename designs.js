@@ -1,32 +1,34 @@
+let clickOn = "";
 // Select size input
 // get width  from url
 function getWidth () {
-	var params = new URLSearchParams(document.location.search.substring(1));
-	var width = params.get("width");
+	const params = new URLSearchParams(document.location.search.substring(1));
+	const width = params.get("width");
 
 	return width;
 };
 
 //get height from url
 function getHeight () {
-	var params = new URLSearchParams(document.location.search.substring(1));
-	var height = params.get("height");
+	const params = new URLSearchParams(document.location.search.substring(1));
+	const height = params.get("height");
 	return height;
 }
 
 //function to get id= from square that click occurs in
-function getIdValue (event) {
-	clickOn = event.srcElement.getAttribute("id");
-}
+//function getIdValue (event) {
+//	let clickOn = event.srcElement.getAttribute("id");
+//}
 
 
 
 // Select color input
 //function to change background-color for <td> with id num clicked
-function addColor(clickOn) {
+function addColor() {
+	let clickOn = event.srcElement.getAttribute("id");
 	// if statement to prevent whole grid color change when click and drag
 	if (!isNaN(clickOn)) {   
-	sqr = document.getElementById(clickOn);
+	let sqr = document.getElementById(clickOn);
 	//  get color value from html color picker
         sqr.style.backgroundColor = document.getElementById("colorPicker").value;
   }
@@ -38,10 +40,10 @@ document.addEventListener('submit', makeGrid ());
 
 
 //function to make the grid on #pixelCanvas
-function makeGrid(wide, high) {
-	var wide = getWidth();
-	var high = getHeight();
-	var pixl = 0;
+function makeGrid() {
+	const wide = getWidth();
+	const high = getHeight();
+	let pixl = 0;
 	const gridBox = document.querySelector("#pixelCanvas");
 	for (let row = 0; row < high; row++) {
 		const tblRow = gridBox.appendChild(document.createElement('tr'));
@@ -52,8 +54,8 @@ function makeGrid(wide, high) {
 		}
 	}
 	gridBox.addEventListener('click', function (event) {
-	getIdValue(event);
-	addColor(clickOn);  
+//	getIdValue(event);
+	addColor();  
         });
 
 	return gridBox;
