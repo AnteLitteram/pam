@@ -27,14 +27,15 @@ function getIdValue (event) {
 
 
 // Select color input
-//need function to change background-color for <div> with id num clicked
+//function to change background-color for <td> with id num clicked
 function addColor(clickOn) {
+	// if statement to prevent whole grid color change when click and drag
+	if (!isNaN(clickOn)) {   
 	sqr = document.getElementById(clickOn);
-//       need if statement to confirm id is num so drag not color whole grid 
 	//  get value from html color picker
         sqr.style.backgroundColor = document.getElementById("colorPicker").value;
+  }
 }
-
 
 // When size is submitted by the user, call makeGrid()
 //may need to add when DOM is ready code
