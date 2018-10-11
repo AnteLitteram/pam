@@ -1,7 +1,3 @@
-// add var to hold id/color clicked/selected
-let clickOn = "";
-
-
 // Select size input
 // get width  from url
 function getWidth () {
