@@ -38,8 +38,7 @@ function addColor(clickOn) {
 
 // When size is submitted by the user, call makeGrid()
 //may need to add when DOM is ready code
-document.addEventListener('submit', makeGrid ());  //add getColor function
-document.addEventListener('submit', getColor ());  //add getColor function
+document.addEventListener('submit', makeGrid ()); 
 
 
 //function to make the grid on #pixelCanvas
