@@ -14,10 +14,9 @@ function getHeight () {
 	return height;
 }
 
-//need function to get id= from square that click occurs in
+//function to get id= from square that click occurs in
 function getIdValue (event) {
 	clickOn = event.srcElement.getAttribute("id");
-	console.log(clickOn);
 }
 
 
@@ -28,7 +27,7 @@ function addColor(clickOn) {
 	// if statement to prevent whole grid color change when click and drag
 	if (!isNaN(clickOn)) {   
 	sqr = document.getElementById(clickOn);
-	//  get value from html color picker
+	//  get color value from html color picker
         sqr.style.backgroundColor = document.getElementById("colorPicker").value;
   }
 }
@@ -49,12 +48,11 @@ function makeGrid(wide, high) {
 		for (let c = 0; c < wide; c++) {
 			const tblData = tblRow.appendChild(document.createElement('td'));
 			pixl = ++pixl;
-                        tblData.setAttribute("id", pixl);
+                        tblData.setAttribute("id", pixl); //number the td id for reference
 		}
 
 	}
 	gridBox.addEventListener('click', function (event) {
-	console.log(event);
 	getIdValue(event);
 	addColor(clickOn);  
         });
