@@ -48,10 +48,8 @@ function makeGrid() {
 		}
 	}
 	gridBox.addEventListener('click', function (event) {
-//	getIdValue(event);
 	addColor();  
         });
 
-	return gridBox;
 
 }
