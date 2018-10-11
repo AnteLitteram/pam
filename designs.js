@@ -15,22 +15,16 @@ function getHeight () {
 	return height;
 }
 
-//function to get id= from square that click occurs in
-//function getIdValue (event) {
-//	let clickOn = event.srcElement.getAttribute("id");
-//}
-
-
 
 // Select color input
 //function to change background-color for <td> with id num clicked
 function addColor() {
 	let clickOn = event.srcElement.getAttribute("id");
-	// if statement to prevent whole grid color change when click and drag
+	                 // if statement to prevent whole grid color change when click and drag
 	if (!isNaN(clickOn)) {   
-	let sqr = document.getElementById(clickOn);
-	//  get color value from html color picker
-        sqr.style.backgroundColor = document.getElementById("colorPicker").value;
+            let sqr = document.getElementById(clickOn);
+	                 //  get color value from html color picker
+            sqr.style.backgroundColor = document.getElementById("colorPicker").value;
   }
 }
 
