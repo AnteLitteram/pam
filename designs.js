@@ -4,11 +4,6 @@ let clickOn = "";
 //let hue = document.getElementById("colorPicker").value;
 
 // Select color input
-// get value from #colorPicker
-function getColor () {
-     let hue = document.getElementById("colorPicker").value;
-}
-
 
 
 // Select size input
@@ -39,6 +34,7 @@ function getIdValue (event) {
 function addColor(clickOn) {
 	sqr = document.getElementById(clickOn);
 //       need if statement to confirm id is num so drag not color whole grid 
+	//  get value from html color picker
         sqr.style.backgroundColor = document.getElementById("colorPicker").value;
 }
 
